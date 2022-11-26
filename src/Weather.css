@@ -1,3 +1,180 @@
+
 .Weather {
-    border: 1px solid red
-}
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+  }
+  
+.Weather h1 {
+    color: #753abf;
+    font-style: italic;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+.Weather h2 {
+    color: #1274c1;
+    font-weight: 600;
+    border: 2px solid rgba(18, 116, 193, 0.3);
+    border-radius: 30px;
+    margin: 10px 10px;
+    background-color: rgba(18, 116, 193, 0.1);
+    padding: 5px 15px;
+    display: inline;
+  }
+  
+.Weather li {
+    list-style: none;
+  }
+  
+.Weather p {
+    margin: 20px auto;
+  }
+  
+.input-group {
+    padding-top: 20px;
+    justify-content: flex-start;
+  }
+  
+.form-control {
+    color: black;
+    width: 300px;
+    font-size: 15px;
+    padding: 6px 0 4px 10px;
+    border: 2px solid #898199;
+    border-radius: 25px;
+    outline: none;
+    font-style: italic;
+  }
+  
+.btn-search {
+    color: black;
+    border: 2px solid rgba(18, 116, 193, 0.3);
+    background-color: rgba(18, 116, 193, 0.1);
+  
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+  
+  .btn-search:hover,
+  .btn-search:focus,
+  .btn-search:visited {
+    background-color: rgba(18, 116, 193, 0.5);
+    color: black;
+  }
+  
+  .btn-current {
+    color: black;
+    background-color: #dfd0f1;
+    border: 2px solid #9b91af;
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+  
+  .btn-current:hover,
+  .btn-current:focus,
+  .btn-current:visited {
+    color: black;
+    background-color: #9b91af;
+  }
+  
+  .row {
+    margin-bottom: 24px;
+  }
+  
+  .cur-date {
+    color: #1274c1;
+    font-style: italic;
+    font-size: 16px;
+    padding: 0 auto;
+  }
+  
+  .cur-date ul {
+    padding: 5px 10px;
+  }
+  
+  .cur-temp {
+    color: rgb(117, 58, 191);
+    opacity: 0.7;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .units a {
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .cur-temp .active {
+    color: rgb(117, 58, 191);
+    cursor: default;
+  }
+  
+  .cur-temp .active:hover {
+    text-decoration: none;
+  }
+  
+  .cur-weath {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  
+  .cur-air {
+    color: #1274c1;
+    font-style: italic;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .forecast {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
+  .forecast-card {
+    display: block;
+    text-align: center;
+    height: 150px;
+    border: 1px solid #ab47bc;
+    border-radius: 20px;
+  }
+  
+  .container-whole-page {
+    background-color: rgba(178, 178, 178, 0.2);
+    background-image: url(./sky2.jpg);
+    background-size: 100%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 900px;
+  }
+  
+  .whole-page-wrapper {
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  #description {
+    color: #753abf;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .source-code {
+    text-align: left;
+    color: #898199;
+  }
+  
+  .source-code a {
+    text-decoration: none;
+  }
+  
