@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from "axios";
 import "./Weather.css"
 
+
 export default function Weather (){
+    const [temperature, setTemperature] = useState (null);
+    const [ready, setReady] = useState(false);
+
+
+    function habdleResponse(response){
+        console.log(response.data);
+        setTemperature(response.data.main.temp)
+    }
+
+if (ready) {
     return (
         <div className="Weather-">
             <div className="card container-whole-page">
@@ -44,7 +56,7 @@ export default function Weather (){
                             </ul>
                         </div>
                         <div className="col-3 cur-temp">
-                            <span id="current-temperature">22</span>
+                            <span id="current-temperature">{temperature}</span>
                             <span className="units">
                                 <sup>
                                 <a href="#" id="celsius-temperature" class="active">°C</a> |
@@ -71,5 +83,13 @@ export default function Weather (){
             </div>
         </div>
     )
+} else {
+    let apiKey ="1bc31ae99edca4b6ba3766063c71acb9";
+    let city = "Poznan";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
+    axios.get(apiUrl).then(habdleResponse);
 
+    return "Loading..."
+}
 }
