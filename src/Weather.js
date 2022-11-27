@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import FormattedDate from './FormattedDate';
 import axios from "axios";
 import "./Weather.css"
 
@@ -15,7 +16,7 @@ export default function Weather (props) {
             ready: true,
             temperature:response.data.main.temp,
             humidity:response.data.main.humidity,
-            date: "SUNDAY, JULY 31",
+            date: new Date(response.data.dt*1000),
             time: "12:00",
             wind: response.data.wind.speed,
             description: response.data.weather[0].description,
@@ -62,10 +63,11 @@ if (weatherData.ready) {
                     </h1>
                     <div className="row">
                         <div className="col-3 cur-date">
-                            <ul>
-                                <li id="current-date">{weatherData.date}</li>
+                        <FormattedDate date={weatherData.date}/>
+                            {/* <ul>
+                                <li id="current-date"></li>
                                 <li id="current-time">⏰{weatherData.time}</li>
-                            </ul>
+                            </ul> */}
                         </div>
                         <div className="col-3 cur-temp">
                             <span id="current-temperature">{Math.round(weatherData.temperature)}</span>
