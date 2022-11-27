@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import FormattedDate from './FormattedDate';
+import WeatherInfo from './WeatherInfo';
 import axios from "axios";
 import "./Weather.css"
 
@@ -8,8 +8,9 @@ export default function Weather (props) {
     const [temperature, setTemperature] = useState (null);
     const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData] = useState({ready:false});
+    const [city, setCity] = useState(props.defaultCity);
 
-    function habdleResponse(response){
+    function handleResponse(response){
         console.log(response.data);
 
         setWeatherData({
@@ -26,12 +27,32 @@ export default function Weather (props) {
 
     }
 
+    function search(){
+        let apiKey ="73a00877081bd43422bdee0f3022beb5";
+        let units = "metric";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(handleResponse);
+//city
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+        //search for a city
+    }
+
+    function handleCityChange(event) {
+        setCity(event.target.value);
+     
+
+    }
+
 if (weatherData.ready) {
     return (
         <div className="Weather">
             <div className="card container-whole-page">
                 <div className="card-body">
-                    <form id="search-form">
+                    <form id="search-form" onSubmit={handleSubmit}>
                         <div className="row input-group">
                             <div className="col-sm-auto">
                                 <input 
@@ -42,6 +63,7 @@ if (weatherData.ready) {
                                  autofocus="on"
                                  id="city-input"
                                  autocomplete="off"
+                                 onChange={handleCityChange}
                                 />
                             </div>
                             <div class="col-sm-auto">
@@ -58,51 +80,13 @@ if (weatherData.ready) {
                             </div>
                         </div>
                     </form>
-                    <h1>
-                        <strong id="desired-city">{weatherData.city}</strong>
-                    </h1>
-                    <div className="row">
-                        <div className="col-3 cur-date">
-                        <FormattedDate date={weatherData.date}/>
-                            {/* <ul>
-                                <li id="current-date"></li>
-                                <li id="current-time">⏰{weatherData.time}</li>
-                            </ul> */}
-                        </div>
-                        <div className="col-3 cur-temp">
-                            <span id="current-temperature">{Math.round(weatherData.temperature)}</span>
-                            <span className="units">
-                                <sup>
-                                <a href="#" id="celsius-temperature" class="active">°C</a> |
-                                <a href="#" id="fahrenheit-temperature">°F</a>
-                                </sup>
-                            </span>
-                        </div>
-                        <div className="col-3 cur-weath">
-                            <div id="description" className="text-capitalize">{weatherData.description}</div>
-                            <img src={weatherData.iconUrl} 
-                            alt={weatherData.description}
-                            width="80px"
-                            id="icon"
-                            className="cur-img"/>
-                        </div>
-                        <div className="col-3 cur-air">
-                            <ul>
-                                <li>Humidity: <span id="humidity">{weatherData.humidity}</span> %</li>
-                                <li>Wind: <span id="wind">{weatherData.wind}</span> m/s</li>
-                            </ul>
-                        </div>
-                    </div>      
+                    <WeatherInfo data={weatherData} />
                 </div>
             </div>
         </div>
     )
 } else {
-    let apiKey ="73a00877081bd43422bdee0f3022beb5";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(habdleResponse);
-
+    search()
     return "Loading..."
 }
 }
