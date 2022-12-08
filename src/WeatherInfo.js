@@ -19,7 +19,7 @@ return (
       <div className="col-3 cur-weath">
           <div id="description" className="text-capitalize">{props.data.description}</div>
           <div className="cur-img">
-          <WeatherIcon code={props.data.icon}/>
+          <WeatherIcon code={props.data.icon} size={50}/>
           </div>
       </div>
       <div className="col-3 cur-air">
