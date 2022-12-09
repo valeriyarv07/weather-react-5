@@ -9,7 +9,7 @@ function App() {
       <Weather defaultCity="Dnipro" />
       <footer>
         This project was coded by Valeriia Rybakova and is {" "}
-        <a href="https://github.com/valeriyarv07/weather-react-5" target="_blank">open-source code on GitHub</a> and <a href="https://astounding-heliotrope-c03484.netlify.app" target="_blank">on Netlify</a>
+        <a href="https://github.com/valeriyarv07/weather-react-5" target="_blank" rel="noopener noreferrer">open-source code on GitHub</a> and <a href="https://astounding-heliotrope-c03484.netlify.app" target="_blank">on Netlify</a>
       </footer>
     </div>
   );
