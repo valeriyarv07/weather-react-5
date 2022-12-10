@@ -66,7 +66,7 @@
   
   .btn-current {
     color: black;
-    background-color: #dfd0f1;
+    background-color: #C0C2E8;
     border: 2px solid #9b91af;
     border-radius: 20px;
     padding: 5px 20px;
@@ -180,5 +180,12 @@
   
   .source-code a {
     text-decoration: none;
+  }
+
+  .Weather canvas {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    display: inline-block;
   }
   
