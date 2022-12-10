@@ -2,3 +2,16 @@
 opacity: 0.6;
 margin-left: 3px;
 }
+
+.WeatherForecast-day {
+  color: #1274c1;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 10px 0px;
+}
+
+.WeatherForecast-temperatures {
+  color: rgba(117, 58, 191, 0.9);
+  font-size: 18px;
+}

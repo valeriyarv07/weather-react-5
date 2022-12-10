@@ -42,7 +42,9 @@ export default function FormattedDate(props) {
   
   }
   return <ul>
-  <li id="current-date">{day}, {date} {month}</li>
+  <li id="current-date">{day},
+  <br />
+  {date} {month}</li>
   <li id="current-time">⏰{hours} : {minutes}</li>
   </ul>
 }

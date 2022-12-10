@@ -1,6 +1,6 @@
 
 .Weather {
-    font-family: "Oswald", sans-serif;
+  font-family: 'Lobster', cursive;
     text-align: center;
   }
   
@@ -66,7 +66,7 @@
   
   .btn-current {
     color: black;
-    background-color: #C0C2E8;
+    background-color: rgba(209, 202, 236, 0.3);
     border: 2px solid #9b91af;
     border-radius: 20px;
     padding: 5px 20px;
@@ -76,18 +76,19 @@
   .btn-current:focus,
   .btn-current:visited {
     color: black;
-    background-color: #9b91af;
+    background-color: rgba(205, 145, 175, 0.5);
   }
   
   .row {
-    margin-bottom: 24px;
+    margin-bottom: 2px;
   }
   
   .cur-date {
     color: #1274c1;
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 auto;
+   
   }
   
   .cur-date ul {
@@ -98,17 +99,14 @@
     color: rgb(117, 58, 191);
     opacity: 0.7;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 52px;
     text-align: center;
-    padding-right: 0;
+
   }
   
-  .cur-img {
-    margin-top: 10px;
     
-  }
   .units a {
-    font-size: 24px;
+    font-size: 18px;
     text-decoration: none;
   }
   
@@ -131,23 +129,10 @@
   .cur-air {
     color: #1274c1;
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
   }
   
-  .forecast {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  
-  .forecast-card {
-    display: block;
-    text-align: center;
-    height: 150px;
-    border: 1px solid #ab47bc;
-    border-radius: 20px;
-  }
   
   .container-whole-page {
     background-color: rgba(178, 178, 178, 0.2);
@@ -171,6 +156,7 @@
     font-size: 18px;
     text-align: center;
     padding-right: 0;
+    opacity: 0.8;
   }
   
   .source-code {
@@ -182,10 +168,12 @@
     text-decoration: none;
   }
 
-  .Weather canvas {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-    display: inline-block;
+  .cur-img svg {
+    width: 50px;
   }
-  
+
+  .WeatherForecast .AnimatedWeatherIcon__svg {
+    width: 50px;
+  }
+
+ 
