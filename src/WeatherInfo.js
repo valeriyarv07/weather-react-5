@@ -24,8 +24,8 @@ return (
       </div>
       <div className="col-3 cur-air">
           <ul>
-              <li>Humidity: <span id="humidity">{props.data.humidity}</span> %</li>
-              <li>Wind: <span id="wind">{props.data.wind}</span> m/s</li>
+              <li>💧 Humidity: <span id="humidity">{props.data.humidity}</span> %</li>
+              <li>🌀 Wind: <span id="wind">{props.data.wind}</span> m/s</li>
           </ul>
       </div>
     </div> 

@@ -1,36 +1,38 @@
 import React from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
+import { AnimatedWeatherIcon } from 'animated-weather-icon'
+
+
 
 export default function WeatherIcon(props) {
   console.log(props.code);
+
+  const icon = new AnimatedWeatherIcon(renderTarget);
+  icon.setType(AnimatedWeatherTypes.Clear, AnimatedWeatherTimes.Day);
+
+
 const codeMapping = {
-    "01d": "CLEAR_DAY",
-    "01n": "CLEAR_NIGHT",
-    "02d": "PARTLY_CLOUDY_DAY",
-    "02n": "PARTLY_CLOUDY_NIGHT",
-    "03d": "PARTLY_CLOUDY_DAY",
-    "03n": "PARTLY_CLOUDY_NIGHT",
-    "04d": "CLOUDY",
-    "04n": "CLOUDY",
-    "09d": "RAIN",
-    "09n": "RAIN",
-    "10d": "RAIN",
-    "10n": "RAIN",
-    "11d": "RAIN",
-    "11n": "RAIN",
-    "13d": "SNOW",
-    "13n": "SNOW",
-    "50d": "FOG",
-    "50n": "FOG",
+    "01d": "Clear",
+    "01n": "Clear",
+    "02d": "BrokenClouds",
+    "02n": "BrokenClouds",
+    "03d": "Cloudy",
+    "03n": "Cloudy",
+    "04d": "Overcast",
+    "04n": "Overcast",
+    "09d": "Rain",
+    "09n": "Rain",
+    "10d": "HeavyRain",
+    "10n": "HeavyRain",
+    "11d": "ThunderStorm",
+    "11n": "ThunderStorm",
+    "13d": "Snow",
+    "13n": "Snow",
+    "50d": "Fog",
+    "50n": "Fog",
 };
 
     return (
-      <ReactAnimatedWeather
-      icon={codeMapping[props.code]}
-      color="rgb(117, 58, 191)"
-      size={props.size}
-      animate={true}
-    />
+      icon.setType(AnimatedWeatherTypes.codeMapping[props.code])
     );
 
 }
